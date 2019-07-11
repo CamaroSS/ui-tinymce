@@ -26,7 +26,6 @@ angular.module('ui.tinymce', [])
         }, tinyInstance,
           updateView = function(editor) {
             var content = editor.getContent({format: options.format}).trim();
-            content = $sce.trustAsHtml(content);
 
             ngModel.$setViewValue(content);
             if (!$rootScope.$$phase) {
